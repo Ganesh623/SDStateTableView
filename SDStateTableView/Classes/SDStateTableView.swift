@@ -246,6 +246,7 @@ public class SDStateTableView: UITableView {
         // Deinitialization code goes here
     }
     
+    @available(iOS 10.0, *)
     public func setState(_ state: SDStateTableViewState) {
         self.currentState =  state
         
@@ -293,6 +294,7 @@ public class SDStateTableView: UITableView {
         dataStateSubtitleLabel.text = message
     }
     
+    @available(iOS 10.0, *)
     private func configureWith(image: UIImage?, title: String?, message: String) {
         
         // Image View
@@ -325,6 +327,7 @@ public class SDStateTableView: UITableView {
         dataStateSubtitleLabel.text = message
     }
     
+    @available(iOS 10.0, *)
     private func configWithButton(image: UIImage?, title: String?, message: String,
                                   buttonTitle: String,
                                   buttonConfig: (UIButton) ->Void,
@@ -343,7 +346,8 @@ public class SDStateTableView: UITableView {
 
 fileprivate extension UIImage {
 	// Redraws itself to the new size
-	func imageWith(newSize: CGSize) -> UIImage {
+    @available(iOS 10.0, *)
+    func imageWith(newSize: CGSize) -> UIImage {
 		let renderer = UIGraphicsImageRenderer(size: newSize)
 		let image = renderer.image { _ in
 			self.draw(in: CGRect.init(origin: CGPoint.zero, size: newSize))
